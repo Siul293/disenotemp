@@ -1,9 +1,111 @@
 <!DOCTYPE html>
 <html lang="es-ES" prefix="og: http://ogp.me/ns#">
 <head>
+	<style>
+	@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src:url('/web/20171014050212im_/http://disenomurcia.com/fonts/murcia.eot');
+	src:url('/web/20171014050212im_/http://disenomurcia.com/fonts/murcia.eot#iefix') format('embedded-opentype'),
+		url('/web/20171014050212im_/http://disenomurcia.com/fonts/murcia.woff') format('woff'),
+		url('/web/20171014050212im_/http://disenomurcia.com/fonts/murcia.ttf') format('truetype'),
+		url('/web/20171014050212im_/http://disenomurcia.com/fonts/murcia.svg#codropsicons') format('svg');
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {background: #fff; color: #383a3c; font-weight: 400; font-size: 1em; line-height: 1.25; font-family: 'Raleway', Calibri, Arial, sans-serif;}
+a, button {outline: none;}
+a {color: #566473; text-decoration: none;}
+a:hover, a:focus {color: #34495e;}
+section {padding: 1em; text-align: center;}
+p.ref {text-align: center; padding: 2em 1em;}
+
+.diseno-web {margin: 0 auto; padding: 2em; text-align: center; max-width: 900px;}
+.diseno-web h1 {margin: 0; font-size: 4.5em; line-height: 1; font-weight: 200;}
+.diseno-web h2 { color:#FF0000;}
+.diseno-web h3 {margin: 0; font-size: 1.5em; line-height: 1; font-weight: bold;	margin-top: 60px;}
+.diseno-web h1 span {display: block; padding: 1em 0 1.5em; font-size: 33%; color: #95a5a6; line-height: 1.4;}
+.diseno-grafico {padding-top: 1em; font-size: 0.8em;}
+.diseno-grafico a { display: inline-block; margin: 0.35em 0.1em; padding: 0.5em 1.2em; outline: none; text-decoration: none; letter-spacing: 1px; font-weight: 700; font-size: 110%;}
+.diseno-grafico div:not(:first-child) h3 {padding-top: 2em;}
+.diseno-grafico a:hover,
+.diseno-grafico a.current-demo {color: inherit;}
+
+@media screen and (max-width: 40em) {.diseno-web h1 {font-size: 2.5em;}}
+
+/**/
+
+.diseno-murcia {
+	position: relative;
+	width: 100%;
+	background: #FF0000;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}
+
+.diseno .diseno-murcia {
+	background: #FF0000;
+}
+
+.murcia {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #FFFFFF;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.diseno .murcia {
+	font-size: 6em;
+	font-weight: 600;
+	padding: 10px 30px;
+/*	text-transform: uppercase;*/
+	color: #222;
+}
+
+.murcia .thin {
+	font-weight: 200;
+}
+
+@media only screen and (max-width : 768px) {
+	.diseno .murcia {
+		font-size: 3em;
+	}
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C" "\201D" "\2018" "\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em;}legend{border:0;padding:0;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}
+
+	</style>
+
 </head>
 <body>
 	<h1>
 		TEST 
 	</h1>
+	<div class="container diseno">
+		<div class="content">
+
+			<div id="diseno-murcia" class="diseno-murcia">
+				<canvas id="diseno-web-murcia"></canvas>
+				<h1 class="murcia">Dise&ntilde;o Murcia</span></h1>
+			</div>        
+			<div class="diseno-web">
+				<h1>Soluciones creativas y personalizadas para generar nuevas oportunidades.</h1>
+				<h2>Dise&ntilde;o Web</h2>
+				<p>html // php // mysql // jquery // css // cms // bootstrap // seo</p>
+				<h2>Dise&ntilde;o Gr&aacute;fico</h2>
+				<p>fotografía // video // sonido // photoshop // identidad corporativa // publicidad</p>
+			</div>
+		</div>
+	</div>
 </body>
